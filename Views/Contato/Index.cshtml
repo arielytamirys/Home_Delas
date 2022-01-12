@@ -1,0 +1,81 @@
+@model IEnumerable<NewJob.Models.Contato>
+
+@{
+    ViewData["Title"] = "Index Contato";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<style>
+
+.imagens_contatos{
+    max-width: 100%;
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+
+}
+
+p {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 7%;
+}
+
+
+
+</style>
+
+
+
+
+<body>
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+
+
+<p>Entre em contato conosco! Nos mande um e-mail:</p>
+<a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=new"><img class="imagens_contato" src="~/img_homedelas/email.jpg" alt="imagem-email"></a>
+
+<p>Ou se preferir, nos chame no WhatAspp:</p>
+ <a href="https://web.whatsapp.com/"><img class="imagens_contatos" src="~/img_homedelas/whatsApp.jpg" alt="imagem-whatsapp"></a>
+
+<table class="table">
+    @* <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WhatsApp)
+            </th>
+            <th></th>
+        </tr>
+    </thead> *@
+    @* <tbody>
+@foreach (var item in Model) 
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WhatsApp)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Contato">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Contato">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Contato">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody> *@
+</table>
+</body>
+</html>

@@ -1,0 +1,82 @@
+@model IEnumerable<NewJob.Models.Vaga>
+
+@{
+    ViewData["Title"] = "Index Vaga";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+
+<body>
+
+    <p>
+        <a asp-action="Create">Criar nova vaga</a>
+    </p>
+
+    <table class="table">
+        <thead>
+           <th>
+                @Html.DisplayNameFor(model => model.Empresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Setor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Responsavel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNPJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vagas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Link_Vaga)
+            </th>
+        </thead>
+        <tbody>
+           @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Setor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsavel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNPJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vagas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                <a href=" @Html.DisplayFor(modelItem => item.Link_Vaga)">  @Html.DisplayFor(modelItem => item.Link_Vaga)</a>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Vaga">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Vaga">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Vaga">Delete</a>
+            </td>
+        </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
+</html>

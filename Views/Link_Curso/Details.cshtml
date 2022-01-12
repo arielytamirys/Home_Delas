@@ -1,0 +1,32 @@
+@model NewJob.Models.Link_Curso
+
+@{
+    ViewData["Title"] = "Details Link_Curso";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+
+<body>
+
+    <div>
+        <h4>Link_Curso</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Link_Cursos)
+            </dt>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+
+</html>
